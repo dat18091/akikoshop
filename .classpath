@@ -13,15 +13,15 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
@@ -35,5 +35,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/Lap Trinh/Java/Javadoc/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java/src/main/webapp/WEB-INF/lib/freemarker.jar"/>
+	<classpathentry kind="lib" path="D:/Lap Trinh/Java/Javadoc/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java/src/main/webapp/WEB-INF/lib/javassist-3.12.1.GA.jar"/>
+	<classpathentry kind="lib" path="D:/Lap Trinh/Java/Javadoc/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java/src/main/webapp/WEB-INF/lib/ognl-3.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/Lap Trinh/Java/Javadoc/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java_Rest/eSMSAPI_Demo_Java/src/main/webapp/WEB-INF/lib/xwork-core-2.3.1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

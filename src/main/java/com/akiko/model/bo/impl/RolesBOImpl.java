@@ -46,6 +46,11 @@ public class RolesBOImpl implements IRolesBO<Roles> {
 		rolesDAO.delete(id);
 	}
 	
+	@Override
+	public List<Roles> getNameById() throws Exception {
+		return rolesDAO.getNameById();
+	}
+
 	private static RolesBOImpl rolesBOImpl = null;
 	public static RolesBOImpl getInstance() {
 		if(rolesBOImpl == null) {

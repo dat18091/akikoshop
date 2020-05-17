@@ -37,19 +37,26 @@ public class InsertRolesController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		String name = (String) request.getParameter("name");
+		String code = (String) request.getParameter("code");
+		String createdBy = (String) request.getParameter("createdBy");
 		if("Thêm Mới".equals(request.getParameter("submit"))) {
-			String name = (String) request.getParameter("name");
-			String code = (String) request.getParameter("code");
-			String createdBy = (String) request.getParameter("createdBy");
-			roles = new Roles(name, code, createdBy);
-			try {
-				rolesBOImpl.insert(roles);
-			} catch (Exception e) {
-				e.printStackTrace();
+			if(name == "" || code == "" || createdBy == "") {
+				request.setAttribute("message", "Bạn đã nhập thiếu thông tin, vui lòng nhập đầy đủ!");
+				response.sendRedirect(request.getContextPath() + "/admin/account/insert-roles");
+			} else if(name != "" && code != "" && createdBy != "") {
+				roles = new Roles(name, code, createdBy);
+				try {
+					rolesBOImpl.insert(roles);
+				} catch (Exception e) {
+					e.printStackTrace();
+					if(e.getMessage().contains("truncated")) {
+						request.setAttribute("message", "Bạn đã nhập quá ký tự cho phép, vui lòng nhập lại!");
+					}
+				}
+				response.sendRedirect(request.getContextPath() + "/admin/account/list-roles");
 			}
-			request.setAttribute("roles", roles);
-			response.sendRedirect(request.getContextPath() + "/admin/account/list-roles");
-		}
+		} 
 	}
 	
 }

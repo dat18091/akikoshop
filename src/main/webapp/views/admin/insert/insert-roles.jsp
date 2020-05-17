@@ -178,23 +178,23 @@
 									<div class="form-group">
 									    <label for="exampleInputEmail1">Tên Quyền</label>
 									    <input type="text" style="border-radius: 15px;" class="form-control" id="name" name="name" placeholder="Nhập tên quyền...">
-									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>
 									<div class="form-group">
 									    <label for="exampleInputEmail1">Code</label>
 									    <input type="text" style="border-radius: 15px;" id="code" name="code" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập từ khóa tên quyền...">
-									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>
 									<div class="form-group">
 									    <label for="exampleInputEmail1">Người Tạo</label>
 									    <input type="text" class="form-control" id="createdBy" name="createdBy" aria-describedby="emailHelp" placeholder="Nhập tên người chỉnh sửa...">
-									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group">
+										<label id="message" style="color: red; font-weight: bold; font-size: 15px;">${message}</label>									
 									</div>
 									<input type="hidden" readonly name="modifiedDate" id="modifiedDate">
 									<input type="hidden" readonly id="modifiedBy" name="modifiedBy" aria-describedby="emailHelp">
 									<div class="form-group">
 		                                <input type="submit" name="submit" style="border-radius: 15px;" class="btn btn-success" value="Thêm Mới">
-		                                <a href="${pageContext.request.contextPath}/admin/account/list-roles" style="border-radius: 15px;" class="btn btn-danger">Hủy Bỏ</a>
+		                                <a href="${pageContext.request.contextPath}/admin/account/list-roles" style="border-radius: 15px;" class="btn btn-danger">Danh Sách</a>
                                     </div>
 								</form>
 							</div><!-- PAGE CONTENT ENDS -->
@@ -211,7 +211,7 @@
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
-
+		
 		<!--[if !IE]> -->
 		<script src="<c:url value="/design/admin/js/jquery-2.1.4.min.js" />"></script>
 

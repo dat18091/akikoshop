@@ -104,6 +104,21 @@ public class RolesDAO implements IRolesDAO<Roles> {
 		callableStatement.executeUpdate();
 	}
 
+	@Override
+	public List<Roles> getNameById() throws Exception {
+		List<Roles> rolesList = new ArrayList<Roles>();
+		StringBuilder sql = new StringBuilder("{CALL procGetAllRoles()}");
+		CallableStatement callableStatement = con.prepareCall(sql.toString());
+		ResultSet resultSet = callableStatement.executeQuery();
+		while(resultSet.next()) {
+			Roles roles = new Roles();
+			roles.setId(resultSet.getLong("rolesId"));
+			roles.setName(resultSet.getNString("name"));
+			rolesList.add(roles);
+		}
+		return rolesList;
+	}
+	
 	private static RolesDAO rolesDAO = null;
 	public static RolesDAO getInstance() {
 		if(rolesDAO == null) {
@@ -111,4 +126,6 @@ public class RolesDAO implements IRolesDAO<Roles> {
 		}
 		return rolesDAO;
 	}
+
+	
 }

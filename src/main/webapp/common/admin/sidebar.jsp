@@ -67,12 +67,12 @@
 								</a>
 								<b class="arrow"></b>
 								<ul class="submenu">
-									<li class="">
+									<!-- <li class="">
 										<a href="#"><i class="menu-icon fa fa-plus purple"></i>Thêm Tài Khoản</a>
 										<b class="arrow"></b>
-									</li>
+									</li> -->
 									<li class="">
-										<a href="#"><i class="menu-icon fa fa-eye pink"></i>Danh Sách Tài Khoản</a>
+										<a href="${pageContext.request.contextPath}/admin/account/list-account"><i class="menu-icon fa fa-eye pink"></i>Danh Sách Tài Khoản</a>
 										<b class="arrow"></b>
 									</li>
 								</ul>

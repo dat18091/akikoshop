@@ -23,4 +23,6 @@ public interface IRolesDAO<T> {
 	
 	public void delete(long id) throws Exception;
 	
+	public List<T> getNameById() throws Exception;
+	
 }

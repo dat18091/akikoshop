@@ -1,4 +1,5 @@
 <%@page import="com.akiko.model.bean.Roles"%>
+<%@page import="java.util.List"%>
 <%@page import="com.akiko.model.bo.impl.RolesBOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -8,7 +9,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Akiko Việt Nam | Danh Sách Quyền</title>
+		<title>Akiko Việt Nam | Danh Sách Tài Khoản</title>
 		
 		<link rel="apple-touch-icon" href="<c:url value="/design/admin/images/akiko.png" />">
     	<link rel="shortcut icon" href="<c:url value="/design/admin/images/akiko.png" />">
@@ -65,14 +66,14 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Dashboard</a>
+								<a href="${pageContext.request.contextPath}/admin-home">Dashboard</a>
 							</li>
 
 							<li>
-								<a href="#">Quản Lý Tài Khoản</a>
+								<a href="">Quản Lý Tài Khoản</a>
 							</li>
 							<li>
-								<a href="#">Phân Quyền</a>
+								<a href="">Tài Khoản</a>
 							</li>
 							<li class="active">Danh Sách Quyền</li>
 						</ul><!-- /.breadcrumb -->
@@ -176,7 +177,7 @@
 											<div class="pull-right tableTools-container"></div>
 										</div>
 										<div class="table-header">
-											Danh Sách Quyền
+											Danh Sách Tài Khoản
 										</div>
 
 										<!-- div.table-responsive -->
@@ -186,31 +187,33 @@
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
-														<th>Tên Quyền</th>
-														<th>Code</th>
-														<th>Ngày Tạo</th>
-														<th>Người Tạo</th>
-														<th>Ngày Chỉnh Sửa</th>
-														<th>Người Chỉnh Sửa</th>
+														<th>Tên Đầy Đủ</th>
+														<th>Tài Khoản</th>
+														<th>Mật Khẩu</th>
+														<th>SĐT</th>
+														<th>Email</th>
+														<th>Quyền</th>
 														<th class="hidden-480">Tác Vụ</th>
 													</tr>
 												</thead>
 
 												<tbody>
-													<c:forEach items="${roles}" var="roles">
+													<c:forEach items="${accounts}" var="accounts">
 													<tr>
-														<td>${roles.getName()}</td>
-														<td>${roles.getCode()}</td>
-														<td>${roles.getCreatedDate()}</td>
-														<td><span class="label label-sm label-warning">${roles.getCreatedBy()}</span></td>
-														<td>${roles.getModifiedDate()}</td>
-														<td><span class="label label-sm label-danger">${roles.getModifiedBy()}</span></td>
+														<td>${accounts.getFullName()}</td>
+														<td>${accounts.getUserName()}</td>
+														<td>${accounts.getPassWord()}</td>
+														<td>${accounts.getPhone()}</td>
+														<td>${accounts.getEmail()}</td>
+														<td class="hidden-480">
+															<span class="label label-sm label-inverse arrowed-in">${accounts.getRolesId()}</span>
+														</td>
 														<td>
 															<div class="hidden-sm hidden-xs btn-group">
-															<a href="details-roles?id=${roles.getId()}" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal"><i class="ace-icon fa fa-eye bigger-120"></i></a>
-															<a href="update-roles?id=${roles.getId()}" class="btn btn-xs btn-info"><i class="ace-icon fa fa-pencil bigger-120"></i></a>
-															<a onclick="return confirm('Bạn có chắc chắn muốn xóa quyền này?')" href="delete-roles?id=${roles.getId()}" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o bigger-120"></i></a>
-															<a class="btn btn-xs btn-warning"><i class="ace-icon fa fa-flag bigger-120"></i></a>
+															<a href="details-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal"><i class="ace-icon fa fa-eye bigger-120"></i></a>
+															<a href="update-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-info"><i class="ace-icon fa fa-pencil bigger-120"></i></a>
+															<a onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')" href="delete-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o bigger-120"></i></a>
+															<a href="account-info?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-flag bigger-120"></i></a>
 															</div>
 														</td>
 													</tr>
@@ -218,13 +221,13 @@
 												</tbody>
 												<tfoot>
 													<tr>
-														<th>Tên Quyền</th>
-														<th>Code</th>
-														<th>Ngày Tạo</th>
-														<th>Người Tạo</th>
-														<th>Ngày Chỉnh Sửa</th>
-														<th>Người Chỉnh Sửa</th>
-														<th>Tác Vụ</th>
+														<th>Tên Đầy Đủ</th>
+														<th>Tài Khoản</th>
+														<th>Mật Khẩu</th>
+														<th>SĐT</th>
+														<th>Email</th>
+														<th>Quyền</th>
+														<th class="hidden-480">Tác Vụ</th>
 													</tr>
 												</tfoot>
 											</table>
@@ -350,61 +353,6 @@
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
-			<!-- The Modal -->
-			<!-- 	RolesBOImpl rolesBOImpl = RolesBOImpl.getInstance();
-				Roles rolesBean = null;
-				Long id = Long.parseLong(request.getParameter("id"));
-				try {
-					rolesBean = rolesBOImpl.getAllById(id);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				request.setAttribute("rolesBean", rolesBean); -->
-			<form name="form-popup" action="${pageContext.request.contextPath}/detail-roles" method="get">
-			  <div class="modal" id="myModal">
-			    <div class="modal-dialog">
-			      <div class="modal-content">
-			      
-			        <!-- Modal Header -->
-			        <div class="modal-header">
-			          <h4 class="modal-title">Modal Heading</h4>
-			        </div>
-			        <!-- Modal body -->
-			        <div class="modal-body">
-			        	<div class="form-group">
-							<label for="exampleInputEmail1">Tên Quyền</label>
-							<input type="text" readonly="readonly" class="form-control" value="" id="name" name="name" placeholder="">
-						</div>
-						<div class="form-group">
-					 		<label for="exampleInputEmail1">Code</label>
-							<input type="text" readonly="readonly" style="border-radius: 15px;" id="code" name="code" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Ngày Tạo</label>
-							<input type="text" readonly="readonly" class="form-control" id="createdBy" name="createdBy" aria-describedby="emailHelp" placeholder="">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Người Tạo</label>
-							<input type="text" readonly="readonly" class="form-control" id="createdBy" name="createdBy" aria-describedby="emailHelp" placeholder="">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Ngày Chỉnh Sửa</label>
-							<input type="text" readonly="readonly" class="form-control" id="createdBy" name="createdBy" aria-describedby="emailHelp" placeholder="">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Người Chỉnh Sửa</label>
-							<input type="text" readonly="readonly" class="form-control" id="createdBy" name="createdBy" aria-describedby="emailHelp" placeholder="">
-						</div>
-			        </div>
-			        <!-- Modal footer -->
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-			        </div>
-			        
-			      </div>
-			    </div>
-			  </div>
-			</form>
 			<%@include file="/common/admin/footer.jsp" %>
 			
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
