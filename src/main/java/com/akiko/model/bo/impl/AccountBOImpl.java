@@ -37,6 +37,26 @@ public class AccountBOImpl implements IAccountBO<Account> {
 		return accountDAO.findByUserNameAndPassWordAndRoles(userName, passWord);
 	}
 	
+	@Override
+	public void delete(long accountId) throws Exception {
+		accountDAO.delete(accountId);
+	}
+
+	@Override
+	public Account getAllById(long accountId) throws Exception {
+		return accountDAO.getAllById(accountId);
+	}
+
+	@Override
+	public void update(Account account) throws Exception {
+		account.setModifiedDate(LocalDateTime.now());
+		accountDAO.update(account);
+	}
+	
+	public boolean checkExistUserName(String userName) {
+		return accountDAO.checkExistUserName(userName);
+	}
+	
 	private static AccountBOImpl accountBOImpl = null;
 	public static AccountBOImpl getInstance() {
 		if(accountBOImpl == null) {
@@ -44,5 +64,6 @@ public class AccountBOImpl implements IAccountBO<Account> {
 		}
 		return accountBOImpl;
 	}
+
 
 }

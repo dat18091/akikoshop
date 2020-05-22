@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.akiko.model.bean.Roles;
 import com.akiko.model.bo.impl.RolesBOImpl;
@@ -31,6 +32,12 @@ public class ListRolesController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Kiem tra dang nhap chua
+		HttpSession session = request.getSession();
+		if (session.getAttribute("ACCOUNT") == null) {
+			response.sendRedirect(request.getContextPath() + "/home-page");
+			return;
+		}
 		try {
 			roleList = rolesBOImpl.getAll();
 		} catch (Exception e) {

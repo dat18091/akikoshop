@@ -13,7 +13,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="${pageContext.request.contextPath}/home-page" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Akiko Admin
@@ -283,7 +283,7 @@
 								<img class="nav-user-photo" src="<c:url value="/design/admin/images/avatars/admin.png" />" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									datnguyen
+									${ACCOUNT.fullName}
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>

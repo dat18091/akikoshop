@@ -19,4 +19,10 @@ public interface IAccountBO<T> {
 	
 	public T findByUserNameAndPassWordAndRoles(String object1, String object2) throws Exception;
 	
+	public void delete(long object) throws Exception;
+	
+	public T getAllById(long object) throws Exception;
+	
+	public void update(T object) throws Exception;
+	
 }

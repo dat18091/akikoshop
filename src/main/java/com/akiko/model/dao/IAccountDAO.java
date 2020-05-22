@@ -19,4 +19,10 @@ public interface IAccountDAO<T> {
 	
 	public T findByUserNameAndPassWordAndRoles(String object1, String Object2);
 	
+	public void delete(long object) throws Exception;
+	
+	public T getAllById(long object) throws Exception;
+	
+	public void update(T object) throws Exception;
+	
 }

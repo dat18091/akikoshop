@@ -212,7 +212,7 @@
 															<div class="hidden-sm hidden-xs btn-group">
 															<a href="details-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal"><i class="ace-icon fa fa-eye bigger-120"></i></a>
 															<a href="update-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-info"><i class="ace-icon fa fa-pencil bigger-120"></i></a>
-															<a onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')" href="delete-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o bigger-120"></i></a>
+															<a onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')" href="delete-account?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o bigger-120"></i></a>
 															<a href="account-info?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-flag bigger-120"></i></a>
 															</div>
 														</td>

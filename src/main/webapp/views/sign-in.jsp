@@ -28,7 +28,8 @@
 			<link rel="stylesheet" href="<c:url value="/design/admin/css/ace-part2.min.css" />" />
 		<![endif]-->
 		<link rel="stylesheet" href="<c:url value="/design/admin/css/ace-rtl.min.css" />" />
-
+		
+		<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="<c:url value="/design/admin/css/ace-ie.min.css" />" />
 		<![endif]-->
@@ -86,11 +87,13 @@
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
-
+													<!-- <div class="g-recaptcha"
+																data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI">
+													</div> -->
 													<div class="space"></div>
 													<div class="clearfix">
 													<label class="inline">
-															<input type="checkbox" class="ace" />
+															<input name="remember" value="remember" type="checkbox" class="ace" />
 															<span class="lbl"> Ghi nhớ đăng nhập</span>
 														</label>
 													</div>
@@ -281,8 +284,10 @@
 															Tôi đồng ý với điều khoản của
 															<a href="#">Akiko</a>
 														</span>
-														
 													</label>
+													<!-- <div class="g-recaptcha"
+																data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI">
+													</div> -->
 													<div class="clearfix">
 														<span style="color: red"><b>${message}</b></span>
 														
@@ -383,5 +388,13 @@
 			 
 			});
 		</script>
+		<!-- <script type="text/javascript">
+		  var onloadCallback = function() {
+		    alert("grecaptcha is ready!");
+		  };
+		</script>
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+		    async defer>
+		</script> -->
 	</body>
 </html>

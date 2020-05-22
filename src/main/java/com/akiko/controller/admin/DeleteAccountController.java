@@ -9,22 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.akiko.model.bo.impl.RolesBOImpl;
+import com.akiko.model.bo.impl.AccountBOImpl;
 
 /**
  * @author dat18
- * @Date: 14-05-2020
+ * @Date: 17-05-2020
  * 
  * Modification Logs
  * DATE   		AUTHOR 		DESCRIPTION
  * -----------------------------------------
- * 14-05-2020	DatNQ24		
+ * 17-05-2020	DatNQ24		
  */
-@WebServlet(urlPatterns = {"/admin/account/delete-roles"})
-public class DeleteRolesController extends HttpServlet {
+@WebServlet(urlPatterns = {"/admin/account/delete-account"})
+public class DeleteAccountController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private RolesBOImpl rolesBOImpl = RolesBOImpl.getInstance();
+	private AccountBOImpl accountBOImpl = AccountBOImpl.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,13 +34,13 @@ public class DeleteRolesController extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/home-page");
 			return;
 		}
-		Long id = Long.parseLong(request.getParameter("id"));
+		Long accountId = Long.parseLong(request.getParameter("accountId")); 
 		try {
-			rolesBOImpl.delete(id);
+			accountBOImpl.delete(accountId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect(request.getContextPath() + "/admin/account/list-roles");
+		response.sendRedirect(request.getContextPath() + "/admin/account/list-account");
 	}
 	
 	@Override

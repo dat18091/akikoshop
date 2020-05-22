@@ -65,8 +65,11 @@
 									<c:if test="${not empty ACCOUNT}">
 										<li><a href="checkout.html"><i class="ace-icon fa fa-bell-o"></i> Thông Báo<span class="notice"> (0)</span></a></li>
 										<li><a href="wishlist.html"><i class="ace-icon fa fa-exclamation-circle"></i> Trợ Giúp</a></li>
-										<li>Welcome <a href="my-account.html">${ACCOUNT.fullName}</a></li>
+										<li>Welcome <a href="${pageContext.request.contextPath}/user/account/user-profile?accountId=${ACCOUNT.accountId}">${ACCOUNT.fullName}</a></li>
 										<li><a href="${pageContext.request.contextPath}/user/account/sign-out?action=sign-out">Đăng Xuất</a></li>
+										<c:if test="${ACCOUNT.getRolesId() == 1}">
+											<li><a href="${pageContext.request.contextPath}/admin-home"><i class="ace-icon fa fa-tachometer"></i> Dashboard</a></li>
+										</c:if>
 									</c:if>
 									<c:if test="${empty ACCOUNT}">
 										<li><a href="wishlist.html"><i class="ace-icon fa fa-exclamation-circle"></i> Trợ Giúp</a></li>

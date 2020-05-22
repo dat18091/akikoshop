@@ -36,10 +36,8 @@ public class Account {
 	private LocalDateTime modifiedDate;
 	private String createdBy;
 	private String modifiedBy;
-	public Account() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+	public Account() {}
 	public Account(long accountId, String fullName, String userName, String passWord, String phone, String email, 
 			String image, String gender, LocalDate birthDay, int identityCard, String city, String district,
 			String ward, String street, String creditCard, long rolesId, String voucher, int coins,
@@ -72,6 +70,23 @@ public class Account {
 		this.email = email;
 		this.createdBy = createdBy;
 	}
+	public Account(long accountId, String fullName, String userName, String phone, String email, 
+			String image, String gender, LocalDate birthDay, int identityCard, String city, String district,
+			String ward, String street, String creditCard, LocalDateTime modifiedDate, String modifiedBy) {
+		super();
+		this.accountId = accountId;
+		this.fullName = fullName;
+		this.userName = userName;
+		this.phone = phone;
+		this.email = email;
+		this.image = image;
+		this.gender = gender;
+		this.birthDay = birthDay;
+		this.identityCard = identityCard;
+		this.modifiedDate = modifiedDate;
+		this.modifiedBy = modifiedBy;
+	}
+	
 	public long getAccountId() {
 		return accountId;
 	}

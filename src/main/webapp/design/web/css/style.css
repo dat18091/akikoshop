@@ -643,7 +643,7 @@ input.search-form[placeholder]:-ms-input-placeholder {
 .header-right-callus:before{
 	background: #ff4f4f none repeat scroll 0 0;
 	color: #fff;
-	content: "";
+	content: "ï‚•";
 	display: inline-block;
 	font-family: FontAwesome;
 	font-size: 20px;
@@ -1161,7 +1161,7 @@ div.nivo-controlNav a.active{
 }
 .product-info{}
 .product-info a{
-	color: #000;
+	color: #333;
 	display: block;
 	font-family: 'Bitter', serif;
 	font-size: 14px;
@@ -1223,7 +1223,7 @@ div.nivo-controlNav a.active{
 5.1 tab product
 -------------------------*/	
 .tab-bg-product-area{
-	background: rgba(0, 0, 0, 0) url("img/product/bkg_product_tab.jpg") no-repeat scroll 0 0 / 100% 100%;
+	background: rgba(0, 0, 0, 0) url("/img/product/bkg_product_tab.jpg") no-repeat scroll 0 0 / 100% 100%;
 	margin-top: 50px;
 	padding: 45px 10px 15px;
 }
@@ -1721,7 +1721,7 @@ div.client-carousel .owl-item img {
 	top:0;
 	left:0;
 	line-height:23px;
-	content:"";
+	content:"ï„�";
 	font-family:fontawesome;
 }
 .single-f-widget ul li a:hover{
@@ -1813,7 +1813,7 @@ body.index-2 .category-heading h2{
 }
 body.index-2 .category-heading h2:before{
 	background: #a08803 none repeat scroll 0 0;
-	content: "";
+	content: "ïƒ‰";
 	display: block;
 	float: left;
 	font-family: "FontAwesome";
