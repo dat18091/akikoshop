@@ -180,19 +180,19 @@
 								<form class="form-horizontal" method="post">
 									<input type="hidden" name="id" value="${roles.getId()}" class="form-control">
 									<div class="form-group">
-									    <label for="exampleInputEmail1">Tên Quyền</label>
+									    <label for="exampleInputEmail1"><b>Tên Quyền</b></label>
 									    <input type="text" style="border-radius: 15px;" value="${roles.getName()}" class="form-control" id="name" name="name" placeholder="Nhập tên quyền...">
 									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>
 									<div class="form-group">
-									    <label for="exampleInputEmail1">Code</label>
+									    <label for="exampleInputEmail1"><b>Code</b></label>
 									    <input type="text" style="border-radius: 15px;" value="${roles.getCode()}" id="code" name="code" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Nhập từ khóa tên quyền...">
 									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>
 									<input type="hidden" readonly id="createdDate" name="createdDate" value="${roles.getCreatedDate()}">
 									<input type="hidden" readonly id="createdBy" value="${roles.getCreatedBy()}" name="createdBy" aria-describedby="emailHelp">
 									<div class="form-group">
-									    <label for="exampleInputEmail1">Người Chỉnh Sửa</label>
+									    <label for="exampleInputEmail1"><b>Người Chỉnh Sửa</b></label>
 									    <input type="text" class="form-control" id="modifiedBy" value="${roles.getModifiedBy()}" name="modifiedBy" aria-describedby="emailHelp" placeholder="Nhập tên người chỉnh sửa...">
 									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>

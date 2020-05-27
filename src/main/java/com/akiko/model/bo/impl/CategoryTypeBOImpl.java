@@ -1,5 +1,6 @@
 package com.akiko.model.bo.impl;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.akiko.model.bean.CategoryType;
@@ -40,6 +41,7 @@ public class CategoryTypeBOImpl implements ICategoryTypeBO<CategoryType> {
 	}
 	@Override
 	public void insert(CategoryType categoryType) throws Exception {
+		categoryType.setCreatedDate(LocalDateTime.now());
 		categoryTypeDAO.insert(categoryType);
 	}
 	@Override
@@ -49,7 +51,6 @@ public class CategoryTypeBOImpl implements ICategoryTypeBO<CategoryType> {
 	
 	@Override
 	public List<CategoryType> getNameById() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

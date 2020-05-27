@@ -99,6 +99,7 @@ public class Account {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+	
 	public long getRolesId() {
 		return rolesId;
 	}

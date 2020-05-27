@@ -176,15 +176,15 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<form class="form-horizontal" method="post">
 									<div class="form-group">
-									    <label for="exampleInputEmail1">Tên Quyền</label>
+									    <label for="exampleInputEmail1"><b>Tên Quyền</b></label>
 									    <input type="text" style="border-radius: 15px;" class="form-control" id="name" name="name" placeholder="Nhập tên quyền...">
 									</div>
 									<div class="form-group">
-									    <label for="exampleInputEmail1">Code</label>
+									    <label for="exampleInputEmail1"><b>Code</b></label>
 									    <input type="text" style="border-radius: 15px;" id="code" name="code" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập từ khóa tên quyền...">
 									</div>
 									<div class="form-group">
-									    <label for="exampleInputEmail1">Người Tạo</label>
+									    <label for="exampleInputEmail1"><b>Người Tạo</b></label>
 									    <input type="text" class="form-control" id="createdBy" name="createdBy" aria-describedby="emailHelp" placeholder="Nhập tên người chỉnh sửa...">
 									</div>
 									<div class="form-group">
@@ -211,25 +211,11 @@
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
-		
-		<!--[if !IE]> -->
 		<script src="<c:url value="/design/admin/js/jquery-2.1.4.min.js" />"></script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="/design/admin/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='<c:url value="/design/admin/js/jquery.mobile.custom.min.js" />'>"+"<"+"/script>");
 		</script>
 		<script src="<c:url value="/design/admin/js/bootstrap.min.js" />"></script>
-
-		<!-- page specific plugin scripts -->
-
-		<!--[if lte IE 8]>
-		  <script src="<c:url value="/design/admin/js/excanvas.min.js" />"></script>
-		<![endif]-->
 		<script src="<c:url value="/design/admin/js/jquery-ui.custom.min.js" />"></script>
 		<script src="<c:url value="/design/admin/js/jquery.ui.touch-punch.min.js" />"></script>
 		<script src="<c:url value="/design/admin/js/chosen.jquery.min.js" />"></script>

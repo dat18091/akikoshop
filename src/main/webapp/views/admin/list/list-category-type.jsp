@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="<c:url value="/design/admin/font-awesome/4.5.0/css/font-awesome.min.css" />" />
 
 		<!-- page specific plugin styles -->
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" />
 		<!-- text fonts -->
 		<link rel="stylesheet" href="<c:url value="/design/admin/css/fonts.googleapis.com.css" />" />
 
@@ -390,7 +390,15 @@
 		<!-- ace scripts -->
 		<script src="<c:url value="/design/admin/js/ace-elements.min.js" />"></script>
 		<script src="<c:url value="/design/admin/js/ace.min.js" />"></script>
-
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+		<!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+		<script type="text/javascript">
+		function deleteAlert() {
+			swal("Good job!", "You clicked the button!", "success");
+		}
+		</script>
+	
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			jQuery(function($) {

@@ -130,7 +130,6 @@ public class HomePageController extends HttpServlet {
 					SessionUtils.getInstance().putValue(request, "ACCOUNT", account);
 					if(account.getRolesId() == 1) {
 						if(isRemember) { saveRemember(response, userName); }
-//						response.sendRedirect(request.getContextPath() + "/admin-home");
 						response.sendRedirect(request.getContextPath() + "/admin-home");
 					} else if(account.getRolesId() == 2) {
 						if(isRemember) { saveRemember(response, userName); }

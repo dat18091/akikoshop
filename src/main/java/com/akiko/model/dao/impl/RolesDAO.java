@@ -1,7 +1,9 @@
 package com.akiko.model.dao.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +119,27 @@ public class RolesDAO implements IRolesDAO<Roles> {
 			rolesList.add(roles);
 		}
 		return rolesList;
+	}
+	
+	public Roles getRolesNameById(String rolesName) {
+		String sql = "SELECT * FROM ROLES WHERE name = ?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, rolesName);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Roles roles = new Roles();
+
+				roles.setId(rs.getLong("rolesId"));
+				roles.setName(rs.getString("name"));
+
+				return roles;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	private static RolesDAO rolesDAO = null;

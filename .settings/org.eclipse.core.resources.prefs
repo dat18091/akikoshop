@@ -1,9 +1,12 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/akiko/controller/admin/InsertCategoryTypeController.java=UTF-8
 encoding//src/main/java/com/akiko/controller/admin/InsertRolesController.java=UTF-8
 encoding//src/main/java/com/akiko/controller/admin/UpdateRolesController.java=UTF-8
 encoding//src/main/java/com/akiko/controller/web/HomePageController.java=UTF-8
 encoding//src/main/java/com/akiko/controller/web/UpdateAccountController.java=UTF-8
 encoding//src/main/java/com/akiko/model/bean/Account.java=UTF-8
+encoding//src/main/java/com/akiko/model/bean/Category.java=UTF-8
+encoding//src/main/java/com/akiko/model/bean/CategoryType.java=UTF-8
 encoding//src/main/java/com/akiko/model/bean/GenericBean.java=UTF-8
 encoding//src/main/java/com/akiko/model/bean/Roles.java=UTF-8
 encoding//src/main/java/com/akiko/tools/SendSMS.java=UTF-8

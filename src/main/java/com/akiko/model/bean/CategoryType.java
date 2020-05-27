@@ -40,6 +40,15 @@ public class CategoryType {
 		this.createdBy = createdBy;
 		this.modifiedBy = modifiedBy;
 	}
+	public CategoryType(String categoryTypeName, String description, String seoURL,
+			String seoKeyword, String createdBy) {
+		super();
+		this.categoryTypeName = categoryTypeName;
+		this.description = description;
+		this.seoURL = seoURL;
+		this.seoKeyword = seoKeyword;
+		this.createdBy = createdBy;
+	}
 	public long getCategoryTypeId() {
 		return categoryTypeId;
 	}

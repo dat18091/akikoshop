@@ -3,6 +3,7 @@ package com.akiko.model.dao.impl;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,13 +68,26 @@ public class CategoryTypeDAO implements ICategoryTypeDAO<CategoryType> {
 	}
 	
 	@Override
-	public void insert(CategoryType object) throws Exception {
-		
+	public void insert(CategoryType categoryType) throws Exception {
+		StringBuilder sql = new StringBuilder("INSERT INTO CATEGORYTYPE(categoryTypeName, description, seoURL, seoKeyword, ");
+		sql.append("createdDate, createdBy) VALUES (?, ?, ?, ?, ?, ?)");
+		CallableStatement callableStatement = con.prepareCall(sql.toString());
+		callableStatement.setNString(1, categoryType.getCategoryTypeName());
+		callableStatement.setNString(2, categoryType.getDescription());
+		callableStatement.setString(3, categoryType.getSeoURL());
+		callableStatement.setString(4, categoryType.getSeoKeyword());
+		callableStatement.setTimestamp(5, Timestamp.valueOf(categoryType.getCreatedDate()));
+		callableStatement.setNString(6, categoryType.getCreatedBy());
+		callableStatement.executeUpdate();
 	}
 	
 	@Override
-	public void delete(long id) throws Exception {
-		
+	public void delete(long categoryTypeId) throws Exception {
+		StringBuilder sql = new StringBuilder("DELETE FROM CATEGORYTYPE WHERE categoryTypeId = ?");
+
+		CallableStatement callableStatement = con.prepareCall(sql.toString());
+		callableStatement.setLong(1, categoryTypeId);
+		callableStatement.executeUpdate();
 	}
 	
 	@Override

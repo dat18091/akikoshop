@@ -189,7 +189,6 @@
 													<tr>
 														<th>Tên Đầy Đủ</th>
 														<th>Tài Khoản</th>
-														<th>Mật Khẩu</th>
 														<th>SĐT</th>
 														<th>Email</th>
 														<th>Quyền</th>
@@ -202,7 +201,6 @@
 													<tr>
 														<td>${accounts.getFullName()}</td>
 														<td>${accounts.getUserName()}</td>
-														<td>${accounts.getPassWord()}</td>
 														<td>${accounts.getPhone()}</td>
 														<td>${accounts.getEmail()}</td>
 														<td class="hidden-480">
@@ -211,7 +209,7 @@
 														<td>
 															<div class="hidden-sm hidden-xs btn-group">
 															<a href="details-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal"><i class="ace-icon fa fa-eye bigger-120"></i></a>
-															<a href="update-roles?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-info"><i class="ace-icon fa fa-pencil bigger-120"></i></a>
+															<a href="update-account?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-info"><i class="ace-icon fa fa-pencil bigger-120"></i></a>
 															<a onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')" href="delete-account?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-danger"><i class="ace-icon fa fa-trash-o bigger-120"></i></a>
 															<a href="account-info?accountId=${accounts.getAccountId()}" class="btn btn-xs btn-warning"><i class="ace-icon fa fa-flag bigger-120"></i></a>
 															</div>
@@ -223,7 +221,6 @@
 													<tr>
 														<th>Tên Đầy Đủ</th>
 														<th>Tài Khoản</th>
-														<th>Mật Khẩu</th>
 														<th>SĐT</th>
 														<th>Email</th>
 														<th>Quyền</th>

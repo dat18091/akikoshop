@@ -50,7 +50,11 @@ public class RolesBOImpl implements IRolesBO<Roles> {
 	public List<Roles> getNameById() throws Exception {
 		return rolesDAO.getNameById();
 	}
-
+	
+	public Roles getRolesNameById(String rolesName) {
+		return rolesDAO.getRolesNameById(rolesName);
+	}
+	
 	private static RolesBOImpl rolesBOImpl = null;
 	public static RolesBOImpl getInstance() {
 		if(rolesBOImpl == null) {
