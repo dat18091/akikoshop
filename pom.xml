@@ -13,7 +13,7 @@
   		<json.simple.version>1.1.1</json.simple.version>
   		<commons.logging.version>1.1.1</commons.logging.version>
   		<commons.lang.version>2.4</commons.lang.version>
-  		<commons.io.version>1.4</commons.io.version>
+  		<commons.io.version>2.7</commons.io.version>
   		<commons.fileupload.version>1.2.2</commons.fileupload.version>
   		<commons.collections.version>3.2.1</commons.collections.version>
   		<json.version>20190722</json.version>
